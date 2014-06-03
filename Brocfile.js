@@ -1,6 +1,8 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var mergeTrees = require('broccoli-merge-trees');
+var pickFiles = require('broccoli-static-compiler');
 
 var app = new EmberApp({
   name: require('./package.json').name,
@@ -30,9 +32,34 @@ app.import('vendor/ic-ajax/dist/named-amd/main.js', {
   ]
 });
 
+app.import('vendor/jquery.browser/dist/jquery.browser.js');
+app.import('vendor/cldr/plurals.js');
+app.import('vendor/ember-i18n/lib/i18n.js');
+app.import('vendor/bootstrap/dist/js/bootstrap.js');
 app.import('vendor/ember-list-view/index.js');
+app.import('vendor/ember-addons.bs_for_ember/dist/js/bs-core.max.js');
+app.import('vendor/ember-addons.bs_for_ember/dist/js/bs-button.max.js');
+app.import('vendor/ember-addons.bs_for_ember/dist/js/bs-modal.max.js');
+app.import('vendor/select2/select2.js');
+app.import('vendor/select2/select2_locale_zh-CN.js');
+app.import('vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js');
+app.import('vendor/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js');
+app.import('vendor/ember-simple-auth/ember-simple-auth.js');
+app.import('vendor/ember-simple-auth/ember-simple-auth-devise.js');
 
 app.import('vendor/gloit/dist/globals/gloit.js');
 app.import('vendor/gloit/dist/gloit.css');
 
-module.exports = app.toTree();
+var fontAwesomeAssets = pickFiles('vendor/font-awesome', {
+   srcDir: 'fonts/',
+   files: ['**/*'],
+   destDir: '/fonts'
+});
+
+var gloitAssets = pickFiles('vendor/gloit', {
+   srcDir: 'images/',
+   files: ['**/*'],
+   destDir: '/images'
+});
+
+module.exports = mergeTrees([app.toTree(), fontAwesomeAssets, gloitAssets]);
