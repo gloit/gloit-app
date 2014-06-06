@@ -16,6 +16,8 @@ authentication =
         @get('container').lookup('store:main').push('user', @get('content'))
       ).property('content.id')
 
-    Ember.SimpleAuth.setup(container, application)
+    Ember.SimpleAuth.setup(container, application, {
+      routeAfterAuthentication: 'authenticated'
+    })
 
 `export default authentication`

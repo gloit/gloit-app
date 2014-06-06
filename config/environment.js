@@ -12,9 +12,10 @@ module.exports = function(environment) {
       // when it is created
 
       api: {
-        baseUrl: 'http://localhost:4200'
-      },
-      routeAfterAuthentication: '/'
+        host: 'http://localhost:4200',
+        namespace: 'api',
+        baseUrl: 'http://localhost:4200/api'
+      }
     }
   };
 
