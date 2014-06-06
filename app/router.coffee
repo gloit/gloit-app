@@ -1,6 +1,12 @@
 Router = Ember.Router.extend
   location: ENV.locationType
 
+  storeURL: (->
+    currentURL = @get('url')
+    localStorage.setItem 'gloit-app:current-url', currentURL if currentURL != '/login'
+  ).on('didTransition')
+
+
 Router.map ->
   @route('login')
   @route('logout')
