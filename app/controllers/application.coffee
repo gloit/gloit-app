@@ -10,8 +10,8 @@ ApplicationController = Ember.Controller.extend
     }]
 
     starterItems: [
-      { icon: 'fa fa-user', url: '#/account/profile', text: '个人信息' }
-      { icon: 'fa fa-key', url: '#/account/password', text: '修改密码' }
+      { icon: 'fa fa-user', route: 'account.profile', text: '个人信息' }
+      { icon: 'fa fa-key', route: 'account.password', text: '修改密码' }
       { icon: 'fa fa-sign-out', route: 'logout', text: '注销' }
     ]
 

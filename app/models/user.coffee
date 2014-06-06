@@ -15,7 +15,7 @@ User = DS.Model.extend
       return reject('您两次输入的新密码不匹配') if newPwd != pwdConfirmation
 
       $.ajax(
-        url: "/#{Menglifang.App.namespace}/password"
+        url: "#{ENV.APP.api.baseUrl}/password"
         type: "PUT"
         data:
           password:
@@ -29,11 +29,11 @@ User = DS.Model.extend
         reject(jqXHR.responseJSON.errors.password)
 
   lock: ->
-    $.post("#{Menglifang.App.host}/#{Menglifang.App.namespace}/users/#{@get('id')}/lock").then (user) =>
+    $.post("#{ENV.APP.api.baseUrl}/users/#{@get('id')}/lock").then (user) =>
       @get('store').pushPayload('user', user)
 
   unlock: ->
-    $.post("#{Menglifang.App.host}/#{Menglifang.App.namespace}/users/#{@get('id')}/unlock").then (user) =>
+    $.post("#{ENV.APP.api.baseUrl}/users/#{@get('id')}/unlock").then (user) =>
       @get('store').pushPayload('user', user)
 
   hasRole: (roles, matchMode) ->
