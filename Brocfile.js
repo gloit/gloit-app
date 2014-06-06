@@ -32,6 +32,9 @@ app.import('vendor/ic-ajax/dist/named-amd/main.js', {
   ]
 });
 
+app.import('vendor/select2/select2.css');
+app.import('vendor/select2/select2-bootstrap.css');
+
 app.import('vendor/jquery.browser/dist/jquery.browser.js');
 app.import('vendor/cldr/plurals.js');
 app.import('vendor/ember-i18n/lib/i18n.js');
