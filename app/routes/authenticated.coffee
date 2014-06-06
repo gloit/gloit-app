@@ -4,6 +4,6 @@ AuthenticatedRoute = Ember.Route.extend Ember.SimpleAuth.AuthenticatedRouteMixin
 
     if @get('session.isAuthenticated')
       url = localStorage.getItem('gloit-app:current-url')
-      @transitionTo url || '/'
+      @transitionTo url || 'authenticated'
 
 `export default AuthenticatedRoute`
