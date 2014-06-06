@@ -13,9 +13,4 @@ LoginController  = Ember.Controller.extend Ember.SimpleAuth.LoginControllerMixin
     { name: 'IE 10+', url: 'http://windows.microsoft.com/en-sg/internet-explorer/ie-10-worldwide-languages', icon: '/images/ie.png' }
   ]
 
-  actions:
-    login: ->
-      debugger
-      @send('authenticate')
-
 `export default LoginController`
