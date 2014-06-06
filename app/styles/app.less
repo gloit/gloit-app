@@ -3,6 +3,8 @@
 @import "vendor/font-awesome/less/font-awesome.less";
 @import "vendor/gloit/less/gloit.less";
 
+@import "./gloit-app/gl-sidelist.less";
+
 .ember-application > .ember-view {
   height: 100%;
 }
@@ -17,4 +19,9 @@
       top: -25px;
     }
   }
+}
+
+// Overrides gloit
+input {
+  color: @black !important;
 }

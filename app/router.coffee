@@ -20,7 +20,7 @@ Router.map ->
       @route 'profile'
       @route 'password'
 
-    @resource 'users', ->
+    @resource 'users', path: '/users', ->
       @route 'new'
       @resource 'user', path: '/:user_id'
 

@@ -1,0 +1,16 @@
+ul.gl-toolbar-links.pull-right
+  each toolbarLinks
+    li
+      link-to route
+        i{bind-attr class=icon}
+        = text
+
+collection Gloit.SidelistComponent content=model height=100 width=300 rowHeight=60
+  link-to 'user' id
+    .name {{username}} ({{realname}})
+    .email
+      = email
+      if accessLocked
+        i.fa.fa-lock.text-danger.pull-right
+
+outlet
