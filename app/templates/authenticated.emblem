@@ -1,4 +1,4 @@
-view "app" brand=brand sidebar=sidebar
+.gl-app
   gl-sidebar brand=brand menus=sidebar.menus starterItems=sidebar.starterItems
   gl-main-toolbar items=breadcrumbs
 

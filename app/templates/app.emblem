@@ -1,4 +1,0 @@
-gl-sidebar brand=view.brand menus=view.sidebar.menus starterItems=view.sidebar.starterItems
-
-.gl-app
-  yield
