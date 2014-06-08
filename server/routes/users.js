@@ -1,10 +1,16 @@
-var user = { id: 1, email: 'admin@gloit.cn', username: 'admin', realname: 'Admin', user_email: 'admin@gloit.cn', user_token: 'abcdefg', roles: 'admin' };
+var user = { id: 1, email: 'admin@gloit.cn', password: '123456', username: 'admin', realname: 'Admin', user_email: 'admin@gloit.cn', user_token: 'abcdefg', roles: 'admin' };
 var users = [ user ];
 var idOfLastUser = 1;
 
 function getUserById(id) {
   for(var i = 0; i < users.length; i++) {
     if(users[i].id == id) return users[i];
+  }
+}
+
+function getUserByUsername(username) {
+  for(var i = 0; i < users.length; i++) {
+    if(users[i].username === username) return users[i];
   }
 }
 
@@ -67,7 +73,9 @@ module.exports = function(app) {
 
   app.post('/users/sign_in', function(req, res) {
     var params = req.body.user;
-    if (params.email === 'admin' && params.password === '123456')
+    var u = getUserByUsername(params.email);
+
+    if (u && params.password === u.password)
       res.status(200).json(user)
     else
       res.status(401).json(null)
