@@ -16,7 +16,7 @@ ApplicationController = Ember.Controller.extend
     ]
 
   availableRoles: [
-    { label: '管理员', value: 'admin' }
+    { label: '系统管理员', value: 'admin' }
     { label: '普通用户', value: 'user' }
   ]
 

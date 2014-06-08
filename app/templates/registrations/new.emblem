@@ -1,0 +1,32 @@
+.gl-registrations-new
+  h2 用户注册
+  form.form-horizontal.form-fluid role="form"
+    .form-group
+      label.col-sm-3.control-label for="username" 用户名
+      .col-sm-9
+        = input value=username class="form-control" type="text" id="username" placeholder="必填且唯一"
+    .form-group
+      label.col-sm-3.control-label for="realname" 真实姓名
+      .col-sm-9
+        = input value=realname class="form-control" type="text" id="realname" placeholder="可选"
+    .form-group
+      label.col-sm-3.control-label for="email" 邮箱
+      .col-sm-9
+        = input value=email class="form-control" type="email" id="email" placeholder="必填且唯一"
+    .form-group
+      label.col-sm-3.control-label for="password" 密码
+      .col-sm-9
+        = input value=password class="form-control" type="password" id="password" placeholder="不少于8位"
+    .form-group
+      label.col-sm-3.control-label for="password-confirmation" 密码确认
+      .col-sm-9
+        = input value=passwordConfirmation class="form-control" type="password" id="password-confirmation" placeholder="不少于8位"
+
+    .form-group.buttons
+      .col-sm-3
+      .col-sm-9
+        button.btn.btn-primary{action 'save'}
+          i.fa.fa-save
+          | 注册
+        button.btn.btn-link{action 'cancel'}
+          | 取消
