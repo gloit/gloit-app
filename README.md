@@ -6,6 +6,16 @@ Gloit App是一个基于[Ember JS](http://emberjs.com)的应用，构建该应�
 
 Gloit App使用`ember-cli`构建，因此需要对[ember-cli](http://iamstef.net/ember-cli/)有一定的了解。另外，依赖的资源全部使用`Bower`进行管理，因此也还需要对[Bower](http://bower.io)有一定的了解。如果遇到什么问题，非常欢迎给我发邮件提问。也可以在[这里](https://github.com/gloit/gloit-app/issues)发Issue。
 
+### 使用说明
+
+#### 自定义应用基调色
+
+Gloit App通过变量`@base-color`来控制整个应用的基调色，默认颜色为`#0074D9`。如果希望改变基调色，只需要在`app/styles/app.less`修改`@base-color`的值即可。例如：
+
+```less
+@base-color: #3D9970;
+```
+
 ### 开发
 
 签出项目到本地：
