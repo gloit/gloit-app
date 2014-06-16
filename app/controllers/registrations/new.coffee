@@ -8,7 +8,7 @@ NewController = Ember.ObjectController.extend
   actions:
     save: ->
       $.ajax(
-        url: "#{ENV.APP.api.baseUrl}/users"
+        url: "#{GloitAppENV.APP.api.baseUrl}/users"
         type: 'POST'
         data:
           user:

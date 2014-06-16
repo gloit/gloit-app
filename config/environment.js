@@ -1,10 +1,14 @@
+/* jshint node: true */
+
 module.exports = function(environment) {
   var ENV = {
     baseURL: '/',
     locationType: 'auto',
-    FEATURES: {
-      // Here you can enable experimental features on an ember canary build
-      // e.g. 'with-controller': true
+    EmberEnv: {
+      FEATURES: {
+        // Here you can enable experimental features on an ember canary build
+        // e.g. 'with-controller': true
+      }
     },
 
     APP: {

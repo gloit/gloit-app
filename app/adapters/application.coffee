@@ -1,5 +1,5 @@
 ApplicationAdapter = DS.ActiveModelAdapter.extend
-  host: ENV.APP.api.host
-  namespace: ENV.APP.api.namespace
+  host: GloitAppENV.APP.api.host
+  namespace: GloitAppENV.APP.api.namespace
 
 `export default ApplicationAdapter`
