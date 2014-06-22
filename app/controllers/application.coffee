@@ -3,9 +3,9 @@ ApplicationController = Ember.Controller.extend
 
   sidebar:
     menus: [{
-      icon: 'fa fa-gear', text: '系统管理', roles: ['admin']
+      icon: 'fa fa-gear', text: '系统管理', roles: ['admins']
       items: [
-        { icon: 'fa fa-users', route: 'users', text: '用户管理', roles: ['admin'] }
+        { icon: 'fa fa-users', route: 'users', text: '用户管理', roles: ['admins'] }
       ]
     }]
 
@@ -16,8 +16,8 @@ ApplicationController = Ember.Controller.extend
     ]
 
   availableRoles: [
-    { label: '系统管理员', value: 'admin' }
-    { label: '普通用户', value: 'user' }
+    { label: '系统管理员', value: 'admins' }
+    { label: '普通用户', value: 'users' }
   ]
 
   availableSidebar: (->
