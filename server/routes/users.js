@@ -1,4 +1,4 @@
-var user = { id: 1, email: 'admin@gloit.cn', password: '123456', username: 'admin', realname: 'Admin', user_email: 'admin@gloit.cn', user_token: 'abcdefg', roles: 'admin' };
+var user = { id: 1, email: 'admin@gloit.cn', password: '123456', username: 'admin', realname: 'Admin', user_email: 'admin@gloit.cn', user_token: 'abcdefg', roles: 'admins' };
 var users = [ user ];
 var idOfLastUser = 1;
 
@@ -76,8 +76,8 @@ module.exports = function(app) {
     var u = getUserByUsername(params.email);
 
     if (u && params.password === u.password)
-      res.status(200).json(user)
+      res.status(200).json({ user: user });
     else
-      res.status(401).json(null)
+      res.status(401).json(null);
   });
 };
