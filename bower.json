@@ -14,6 +14,7 @@
     "ember-cli-test-loader": "rjackson/ember-cli-test-loader#0.0.2",
 
     "bootstrap": "~3.1.0",
+    "moment": "~2.7.0",
     "notifier": "https://github.com/Srirangan/notifer.js.git#1.0.0",
     "gloit": "gloit/gloit#master"
   }

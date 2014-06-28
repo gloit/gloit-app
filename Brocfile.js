@@ -35,19 +35,33 @@ app.import('vendor/select2/select2_locale_zh-CN.js');
 app.import('vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js');
 app.import('vendor/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js');
 app.import('vendor/notifier/notifier.js');
+app.import('vendor/momentjs/moment.js');
+app.import('vendor/momentjs/lang/zh-cn.js');
 
 app.import('vendor/gloit/dist/globals/gloit.js');
 
 var fontAwesomeAssets = pickFiles('vendor/font-awesome', {
-   srcDir: 'fonts/',
-   files: ['**/*'],
-   destDir: '/fonts'
+  srcDir: 'fonts/',
+  files: ['**/*'],
+  destDir: '/fonts'
+});
+
+var bootstrapAssets = pickFiles('vendor/bootstrap', {
+  srcDir: 'fonts/',
+  files: ['**/*'],
+  destDir: '/fonts'
+});
+
+var select2Assets = pickFiles('vendor/bootstrap', {
+  srcDir: '/',
+  files: ['select2.png', 'select2x2.png'],
+  destDir: '/assets'
 });
 
 var gloitAssets = pickFiles('vendor/gloit', {
-   srcDir: 'images/',
-   files: ['**/*'],
-   destDir: '/images'
+  srcDir: 'images/',
+  files: ['**/*'],
+  destDir: '/images'
 });
 
-module.exports = mergeTrees([app.toTree(), fontAwesomeAssets, gloitAssets]);
+module.exports = mergeTrees([app.toTree(), fontAwesomeAssets, bootstrapAssets, select2Assets, gloitAssets]);
