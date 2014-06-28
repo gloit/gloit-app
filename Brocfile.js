@@ -52,7 +52,7 @@ var bootstrapAssets = pickFiles('vendor/bootstrap', {
   destDir: '/fonts'
 });
 
-var select2Assets = pickFiles('vendor/bootstrap', {
+var select2Assets = pickFiles('vendor/select2', {
   srcDir: '/',
   files: ['select2.png', 'select2x2.png'],
   destDir: '/assets'
