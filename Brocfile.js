@@ -34,8 +34,6 @@ app.import('vendor/select2/select2.js');
 app.import('vendor/select2/select2_locale_zh-CN.js');
 app.import('vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js');
 app.import('vendor/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js');
-app.import('vendor/ember-simple-auth/ember-simple-auth.js');
-app.import('vendor/ember-simple-auth/ember-simple-auth-devise.js');
 app.import('vendor/notifier/notifier.js');
 
 app.import('vendor/gloit/dist/globals/gloit.js');

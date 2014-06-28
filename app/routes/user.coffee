@@ -1,4 +1,4 @@
-UserRoute = Ember.Route.extend Ember.SimpleAuth.AuthenticatedRouteMixin,
+UserRoute = Ember.Route.extend
   model: (params) -> @store.find('user', params.user_id)
 
   setupController: (controller, model) ->

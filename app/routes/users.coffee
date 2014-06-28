@@ -1,4 +1,4 @@
-UsersRoute = Ember.Route.extend Ember.SimpleAuth.AuthenticatedRouteMixin,
+UsersRoute = Ember.Route.extend
   model: -> @store.find('user')
 
 `export default UsersRoute`

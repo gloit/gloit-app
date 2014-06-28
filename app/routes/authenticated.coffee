@@ -1,4 +1,6 @@
-AuthenticatedRoute = Ember.Route.extend Ember.SimpleAuth.AuthenticatedRouteMixin,
+`import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin'`
+
+AuthenticatedRoute = Ember.Route.extend AuthenticatedRouteMixin,
   beforeModel: (transition) ->
     @_super(transition)
 

@@ -1,4 +1,4 @@
-ProfileRoute = Ember.Route.extend Ember.SimpleAuth.AuthenticatedRouteMixin,
+ProfileRoute = Ember.Route.extend
   model: -> @get('session.currentUser')
 
 `export default ProfileRoute`

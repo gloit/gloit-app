@@ -2,5 +2,7 @@
   "port": 4200,
   "host": "0.0.0.0",
   "live-reload": true,
-  "environment": "development"
+  "environment": "development",
+  "newestVersion": "0.0.37",
+  "lastVersionCheck": 1403917005978
 }

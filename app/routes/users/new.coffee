@@ -1,4 +1,4 @@
-NewRoute = Ember.Route.extend Ember.SimpleAuth.AuthenticatedRouteMixin,
+NewRoute = Ember.Route.extend
   controllerName: 'user'
 
   model: -> @store.createRecord('user')

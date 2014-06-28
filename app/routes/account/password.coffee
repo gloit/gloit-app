@@ -1,4 +1,4 @@
-PasswordRoute = Ember.Route.extend Ember.SimpleAuth.AuthenticatedRouteMixin,
+PasswordRoute = Ember.Route.extend
   model: -> @get('session.currentUser')
 
 `export default PasswordRoute`

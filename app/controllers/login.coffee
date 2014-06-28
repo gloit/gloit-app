@@ -1,5 +1,7 @@
-LoginController  = Ember.Controller.extend Ember.SimpleAuth.LoginControllerMixin,
-  authenticatorFactory: "ember-simple-auth-authenticator:devise"
+`import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin'`
+
+LoginController  = Ember.Controller.extend LoginControllerMixin,
+  authenticator: "authenticator:gloit-app"
 
   registerable: true
 

@@ -5,7 +5,7 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
-    EmberEnv: {
+    EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
@@ -22,6 +22,12 @@ module.exports = function(environment) {
         baseUrl: 'http://localhost:4200/api'
       }
     }
+  };
+
+  ENV['simple-auth'] = {
+    authorizer: 'authorizer:gloit-app',
+    routeAfterAuthentication: 'authenticated',
+    crossOriginWhitelist: ["http://localhost:4200"]
   };
 
   if (environment === 'development') {
