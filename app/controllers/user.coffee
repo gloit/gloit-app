@@ -1,4 +1,4 @@
-`import ModelManagerMixin from '../mixins/model-manager'`
+`import ModelManagerMixin from '../mixins/controller/model-manager'`
 
 UserController = Ember.ObjectController.extend ModelManagerMixin,
   needs: ['authenticated']
