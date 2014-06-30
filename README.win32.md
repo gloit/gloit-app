@@ -24,6 +24,7 @@
 
 ```cmd
 > npm install
+> bower install
 ```
 
 启动应用：
