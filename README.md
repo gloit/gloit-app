@@ -38,3 +38,16 @@ $ ember server
 
 打开浏览器，访问 http://localhost:4200
 便可打开应用。默认用户名为：admin，密码为：123456。
+
+### Windows
+
+如果是在`Windows 7`以上使用此应用，请先安装[node.js](http://nodejs.org)，并把安装目录设置到`PATH`中。
+然后安装`ember-cli`和`Bower`
+
+```cmd
+> npm install -g ember-cli
+> npm install -g bower
+```
+
+最后把`node`的全局库目录`C:\Users\username\AppData\Roaming\npm`加入`PATH`中。
+接下来的工作如上所述，不再重复。
