@@ -73,7 +73,7 @@ module.exports = function(app) {
 
   app.post('/users/sign_in', function(req, res) {
     var params = req.body.user;
-    var u = getUserByUsername(params.email);
+    var u = getUserByUsername(params.login);
 
     if (u && params.password === u.password)
       res.status(200).json({ user: user });
