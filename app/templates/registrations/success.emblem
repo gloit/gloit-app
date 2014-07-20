@@ -1,4 +1,4 @@
-.gl-registrations-success
+.gc-registrations-success
   h2 用户注册
   div
     .alert.alert-success

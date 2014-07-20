@@ -1,4 +1,4 @@
-collection Gloit.SidelistComponent content=listItems height=100 width=200 rowHeight=45
+collection GloitComponent.SidelistComponent content=listItems height=100 width=200 rowHeight=45
   link-to route
     i{bind-attr class=icon}
     = text

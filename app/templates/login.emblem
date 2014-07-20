@@ -1,1 +1,1 @@
-gl-login-form registerable=registerable title=title copyright=copyright identification=identification password=password supportedBrowers=supportedBrowers action='authenticate'
+gc-login-form registerable=registerable title=title copyright=copyright identification=identification password=password supportedBrowers=supportedBrowers action='authenticate'

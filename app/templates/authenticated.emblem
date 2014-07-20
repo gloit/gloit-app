@@ -1,5 +1,5 @@
-.gl-app
-  gl-sidebar brand=brand menus=sidebar.menus starterItems=sidebar.starterItems
-  gl-main-toolbar items=breadcrumbs
+.gc-app
+  gc-sidebar brand=brand menus=sidebar.menus starterItems=sidebar.starterItems
+  gc-main-toolbar items=breadcrumbs
 
   outlet

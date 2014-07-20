@@ -38,7 +38,7 @@ app.import('vendor/notifier/notifier.js');
 app.import('vendor/momentjs/moment.js');
 app.import('vendor/momentjs/lang/zh-cn.js');
 
-app.import('vendor/gloit/dist/globals/gloit.js');
+app.import('vendor/gloit-component/dist/globals/gloit-component.js');
 
 var fontAwesomeAssets = pickFiles('vendor/font-awesome', {
   srcDir: 'fonts/',
@@ -58,10 +58,10 @@ var select2Assets = pickFiles('vendor/select2', {
   destDir: '/assets'
 });
 
-var gloitAssets = pickFiles('vendor/gloit', {
+var gloitComponentAssets = pickFiles('vendor/gloit-component', {
   srcDir: 'images/',
   files: ['**/*'],
   destDir: '/images'
 });
 
-module.exports = mergeTrees([app.toTree(), fontAwesomeAssets, bootstrapAssets, select2Assets, gloitAssets]);
+module.exports = mergeTrees([app.toTree(), fontAwesomeAssets, bootstrapAssets, select2Assets, gloitComponentAssets]);
