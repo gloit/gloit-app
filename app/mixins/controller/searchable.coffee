@@ -1,3 +1,5 @@
+`import Ember from 'ember'`
+
 `import PageableMixin from './pageable'`
 
 SearchableMixin = Ember.Mixin.create PageableMixin,

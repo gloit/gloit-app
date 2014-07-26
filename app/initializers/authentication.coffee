@@ -1,3 +1,4 @@
+`import Ember from 'ember'`
 `import DeviseAuthenticator from 'simple-auth-devise/authenticators/devise'`
 `import DeviseAuthorizer from 'simple-auth-devise/authorizers/devise'`
 `import Session from 'simple-auth/session'`
@@ -14,14 +15,14 @@ GloitAppAuthenticator = DeviseAuthenticator.extend
       self = @
       @makeRequest(data).then (response) ->
         Ember.run -> resolve(self._extractResponse(response))
-      , (xhr, status, error) ->
+      , (xhr) ->
         Ember.run -> reject(xhr.responseJSON || xhr.responseText)
 
   _extractResponse: (response) ->
     Ember.merge(response.user, user_token: response.user.authentication_token, user_email: response.user.email)
 
 GloitAppAuthorizer = DeviseAuthorizer.extend
-  authorize: (jqXHR, requestOptions) ->
+  authorize: (jqXHR) ->
     userToken = this.get('session.user_token')
     userEmail = this.get('session.user_email')
     if @get('session.isAuthenticated') && !Ember.isEmpty(userToken) && !Ember.isEmpty(userEmail)
@@ -37,7 +38,7 @@ authentication =
   name: 'authentication'
   before: 'simple-auth'
 
-  initialize: (container, application) ->
+  initialize: (container) ->
     container.register('authenticator:gloit-app', GloitAppAuthenticator)
     container.register('authorizer:gloit-app', GloitAppAuthorizer)
 

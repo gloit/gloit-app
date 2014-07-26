@@ -1,3 +1,5 @@
+`import Ember from 'ember'`
+
 AuthenticatedController = Ember.ObjectController.extend
   needs: 'application'
 

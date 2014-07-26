@@ -48,5 +48,5 @@ form.form-horizontal.form-fluid role="form"
         button.btn.btn-link{action 'revertChanges'}
           | 重置
 
-bs-modal name=removeConfirmationName fade=true footerButtons=removeConfirmationButtons title=removeConfirmationTitle
+bs-modal name=removeConfirmationName fade=true footerButtonsBinding='removeConfirmationButtons' title=removeConfirmationTitle
   p= removeConfirmationMessage

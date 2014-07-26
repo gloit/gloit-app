@@ -1,3 +1,5 @@
+`import Ember from 'ember'`
+
 ModelManagerMixin = Ember.Mixin.create
   modelName: ''
   humanModelName: ''

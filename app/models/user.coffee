@@ -1,3 +1,6 @@
+`import Ember from 'ember'`
+`import DS from 'ember-data'`
+
 User = DS.Model.extend
   username: DS.attr()
   realname: DS.attr()
@@ -11,10 +14,10 @@ User = DS.Model.extend
   unlockable: Ember.computed.alias('accessLocked')
 
   changePassword: (oldPwd, newPwd, pwdConfirmation) ->
-    new Ember.RSVP.Promise (resolve, reject) =>
+    new Ember.RSVP.Promise (resolve, reject) ->
       return reject('您两次输入的新密码不匹配') if newPwd != pwdConfirmation
 
-      $.ajax(
+      Ember.$.ajax(
         url: "#{GloitAppENV.APP.api.baseUrl}/password"
         type: "PUT"
         data:
@@ -25,15 +28,15 @@ User = DS.Model.extend
         dataType: 'json'
       ).then ->
         resolve()
-      , (jqXHR, textStatus, errorThrown) ->
+      , (jqXHR) ->
         reject(jqXHR.responseJSON.errors.password)
 
   lock: ->
-    $.post("#{GloitAppENV.APP.api.baseUrl}/users/#{@get('id')}/lock").then (user) =>
+    Ember.$.post("#{GloitAppENV.APP.api.baseUrl}/users/#{@get('id')}/lock").then (user) =>
       @get('store').pushPayload('user', user)
 
   unlock: ->
-    $.post("#{GloitAppENV.APP.api.baseUrl}/users/#{@get('id')}/unlock").then (user) =>
+    Ember.$.post("#{GloitAppENV.APP.api.baseUrl}/users/#{@get('id')}/unlock").then (user) =>
       @get('store').pushPayload('user', user)
 
   hasRole: (roles, matchMode) ->

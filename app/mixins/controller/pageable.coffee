@@ -1,3 +1,5 @@
+`import Ember from 'ember'`
+
 PageableMixin = Ember.Mixin.create
   isPageable: true
   total: 0

@@ -1,3 +1,5 @@
+`import Ember from 'ember'`
+
 NewRoute = Ember.Route.extend
   controllerName: 'user'
 

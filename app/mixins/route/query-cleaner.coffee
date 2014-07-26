@@ -1,3 +1,5 @@
+`import Ember from 'ember'`
+
 QueryCleanerMixin = Ember.Mixin.create
   setupController: (controller, model) ->
     controller.set('query', {}) if controller.get('query')

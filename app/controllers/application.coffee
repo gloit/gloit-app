@@ -1,3 +1,5 @@
+`import Ember from 'ember'`
+
 ApplicationController = Ember.Controller.extend
   brand: { name: 'Gloit' }
 
@@ -24,7 +26,7 @@ ApplicationController = Ember.Controller.extend
     menus = []
     user = @get('session.currentUser')
 
-    @get('sidebar.menus').forEach (menu) =>
+    @get('sidebar.menus').forEach (menu) ->
       if user.hasRole(menu.roles, 'any')
         newMenu = Ember.merge {}, menu
         menus.push newMenu
@@ -48,7 +50,7 @@ ApplicationController = Ember.Controller.extend
       return if Ember.isEmpty(routes)
 
       breadcrumbs = []
-      routes.forEach (route, i, arr) ->
+      routes.forEach (route) ->
         name = route.name
         return if name.indexOf('.index') != -1 || name == 'application' || name == 'authenticated'
 

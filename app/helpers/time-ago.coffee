@@ -1,5 +1,7 @@
-helper = Ember.Handlebars.makeBoundHelper (value, options) ->
+`import Ember from 'ember'`
+
+helper = Ember.Handlebars.makeBoundHelper (value) ->
   return '' unless value
-  new Handlebars.SafeString(moment(value).fromNow())
+  new moment(value).fromNow().htmlSafe()
 
 `export default helper`

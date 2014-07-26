@@ -1,3 +1,4 @@
+`import Ember from 'ember'`
 `import ModelManagerMixin from '../mixins/controller/model-manager'`
 
 UserController = Ember.ObjectController.extend ModelManagerMixin,
