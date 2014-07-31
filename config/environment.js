@@ -17,9 +17,9 @@ module.exports = function(environment) {
       // when it is created
 
       api: {
-        host: 'http://localhost:4200',
+        host: 'http://192.168.1.113:4200',
         namespace: 'api',
-        baseUrl: 'http://localhost:4200/api'
+        baseUrl: 'http://192.168.1.113:4200/api'
       }
     }
   };

@@ -4,7 +4,12 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var mergeTrees = require('broccoli-merge-trees');
 var pickFiles = require('broccoli-static-compiler');
 
-var app = new EmberApp();
+var app = new EmberApp({
+  vendorFiles: {
+    'es5-shim.js': 'vendor/es5-shim/es5-shim.js',
+    'es5-sham.js': 'vendor/es5-shim/es5-sham.js'
+  }
+});
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
@@ -18,6 +23,9 @@ var app = new EmberApp();
 // modules that you would like to import into your application
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
+
+app.import('vendor/html5shiv/dist/html5shiv.js', { destDir: 'assets' });
+app.import('vendor/respond/dest/respond.min.js', { destDir: 'assets' });
 
 app.import('vendor/select2/select2.css');
 app.import('vendor/select2/select2-bootstrap.css');
