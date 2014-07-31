@@ -21,7 +21,7 @@ Gloit App通过变量`@base-color`来控制整个应用的基调色，默认颜�
 签出项目到本地：
 
 ```bash
-$ git checkout https://github.com/gloit/gloit-app
+$ git clone https://github.com/gloit/gloit-app
 ```
 
 安装依赖：
