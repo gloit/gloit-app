@@ -12,6 +12,7 @@ $ npm install -g ember-cli
 
 # 安装bower
 $ npm install -g bower
+```
 
 ### 使用说明
 
