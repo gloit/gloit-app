@@ -1,6 +1,6 @@
 zh_CN =
-  'models.role.admin': '管理员'
-  'models.role.user': '普通用户'
+  'models.role.admins': '系统管理员'
+  'models.role.users': '普通用户'
 
   'routes.users': '用户管理'
   'routes.users.new': '添加用户'
