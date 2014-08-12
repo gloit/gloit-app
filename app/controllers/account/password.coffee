@@ -3,15 +3,17 @@
 PasswordController = Ember.ObjectController.extend
   actions:
     save: ->
+      @send('loading')
       @get('model').changePassword(
         @get('oldPassword'),
         @get('newPassword'),
         @get('passwordConfirmation')
-      ).then  =>
+      ).then( =>
         Notifier.success('修改密码成功')
         @setProperties(oldPassword: null, newPassword: null, passwordConfirmation: null)
       , (errorMsg) ->
         Notifier.error(errorMsg)
+      ).finally => @send('finished')
 
     revertChanges: ->
       @setProperties(oldPassword: null, newPassword: null, passwordConfirmation: null)

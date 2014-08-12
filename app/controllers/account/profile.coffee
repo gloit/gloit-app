@@ -6,8 +6,11 @@ ProfileController = Ember.ObjectController.extend
       @get('model').rollback() if @get('model.isDirty')
 
     save: ->
-      @get('model').save().then ->
+      @send('loading')
+      @get('model').save().then(->
         Notifier.success('修改账号信息成功')
-      , -> Notifier.error('修改账号信息失败')
+      , -> Notifier.error('修改账号信息失败')).finally =>
+        @send('finished')
+
 
 `export default ProfileController`

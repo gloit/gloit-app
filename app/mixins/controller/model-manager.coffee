@@ -35,11 +35,17 @@ ModelManagerMixin = Ember.Mixin.create
 
     save: ->
       return unless @beforeSave()
-      @get('model').save().then =>
+
+      saved = =>
         Notifier.success("保存#{@get('humanModelName')}成功")
         @afterSave()
         @transitionToRoute(@get('afterSaveRoute'), @get('model'))
-      , => Notifier.error("保存#{@get('humanModelName')}失败")
+
+      saveFailed = =>
+        Notifier.error("保存#{@get('humanModelName')}失败")
+
+      @send('loading')
+      @get('model').save().then(saved, saveFailed).finally( => @send('finished') )
 
     cancel: ->
       @get('model').rollback()
@@ -54,17 +60,21 @@ ModelManagerMixin = Ember.Mixin.create
       # TODO Remove `@beforeConfirmRemove()`
       return false unless @beforeConfirmRemove() && @beforeRemove()
 
-      @get('model').deleteRecord()
-      @get('model').save().then =>
+      removed = =>
         Notifier.success("删除#{@get('humanModelName')}成功")
         @afterRemove()
         @transitionToRoute(@get('afterDestroyRoute'))
-      , (response) =>
+
+      removeFailed = (response) =>
         @get('model').rollback()
 
         if response.responseJSON.msg
           Notifier.error response.responseJSON.msg
         else
           Notifier.error("删除#{@get('humanModelName')}失败")
+
+      @send('loading')
+      @get('model').deleteRecord()
+      @get('model').save().then(removed, removeFailed).finally( => @send('finished') )
 
 `export default ModelManagerMixin`
