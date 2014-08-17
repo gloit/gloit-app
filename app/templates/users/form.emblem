@@ -44,9 +44,10 @@ form.form-horizontal.form-fluid role="form"
           | 取消
       else
         button.btn.btn-danger{action 'remove'}
-          i.fa.fa-times 删除
+          i.fa.fa-times
+          | 删除
         button.btn.btn-link{action 'revertChanges'}
           | 重置
 
-bs-modal name=removeConfirmationName fade=true footerButtonsBinding='removeConfirmationButtons' title=removeConfirmationTitle
-  p= removeConfirmationMessage
+    bs-modal name=removeConfirmationName fade=true footerButtonsBinding='removeConfirmationButtons' title=removeConfirmationTitle
+      p= removeConfirmationMessage
