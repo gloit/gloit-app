@@ -33,21 +33,4 @@ form.form-horizontal.form-fluid role="form"
     .col-sm-9
       = view Ember.Select content=availableRoles value=roles optionLabelPath="content.label" optionValuePath="content.value" prompt="-> 请选择用户角色 <-"
 
-  .form-group.buttons
-    .col-sm-3
-    .col-sm-9
-      button.btn.btn-primary{action 'save'}
-        i.fa.fa-save
-        | 保存
-      if model.isNew
-        button.btn.btn-link{action 'cancel'}
-          | 取消
-      else
-        button.btn.btn-danger{action 'remove'}
-          i.fa.fa-times
-          | 删除
-        button.btn.btn-link{action 'revertChanges'}
-          | 重置
-
-    bs-modal name=removeConfirmationName fade=true footerButtonsBinding='removeConfirmationButtons' title=removeConfirmationTitle
-      p= removeConfirmationMessage
+  partial 'shared/model-management-buttons'
