@@ -33,15 +33,14 @@
     <div id="qunit"></div>
     <div id="qunit-fixture"></div>
 
-    <script>
-      window.GloitAppENV = {{ENV}};
-      window.EmberENV = window.GloitAppENV.EmberENV;
-    </script>
     <script src="assets/vendor.js"></script>
     <script src="assets/test-support.js"></script>
     <script src="assets/gloit-app.js"></script>
     <script src="testem.js"></script>
     <script>
+      window.GloitAppENV = require('gloit-app/config/environment')['default'];
+      window.EmberENV = window.GloitAppENV.EmberENV;
+
       require('gloit-app/tests/test-helper');
     </script>
     <script src="assets/test-loader.js"></script>

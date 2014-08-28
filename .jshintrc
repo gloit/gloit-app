@@ -3,8 +3,8 @@
     "document": true,
     "window": true,
     "-Promise": true,
-    "moment": true,
     "GloitAppENV": true,
+    "moment": true,
     "Bootstrap": true,
     "Notifier": true,
     "NotifierjsConfig": true
