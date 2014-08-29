@@ -1,4 +1,4 @@
-form.form-horizontal.form-fluid role="form"
+em-form model=model form_layout="horizontal" submit_button=false
   h2
     = formLegend
     if lockable
@@ -9,28 +9,22 @@ form.form-horizontal.form-fluid role="form"
       button.btn.btn-success.pull-right{action 'unlock'}
         i.fa.fa-unlock
         | 解锁
-  .form-group
-    label.col-sm-3.control-label for="username" 用户名
-    .col-sm-9
-      if model.isNew
-        = input value=username class="form-control" type="text" id="username" placeholder="必填且唯一"
-      else
+
+  if model.isNew
+    em-input property="username" label="用户名" placeholder="必填且唯一"
+  else
+    .form-group
+      label.col-sm-2.control-label for="username" 用户名
+      .col-sm-10
         p.form-control-static= username
+
+  em-input property="realname" label="真实姓名" placeholder="可选"
+  em-input property="email" label="邮箱" type="email" placeholder="必填且唯一"
+  em-input property="password" label="密码" type="password" placeholder="不少于8位"
+
   .form-group
-    label.col-sm-3.control-label for="realname" 真实姓名
-    .col-sm-9
-      = input value=realname class="form-control" type="text" id="realname" placeholder="可选"
-  .form-group
-    label.col-sm-3.control-label for="email" 邮箱
-    .col-sm-9
-      = input value=email class="form-control" type="email" id="email" placeholder="必填且唯一"
-  .form-group
-    label.col-sm-3.control-label for="password" 密码
-    .col-sm-9
-      = input value=password class="form-control" type="password" id="password" placeholder="不少于8位"
-  .form-group
-    label.col-sm-3.control-label for="roles" 角色
-    .col-sm-9
-      = view Ember.Select content=availableRoles value=roles optionLabelPath="content.label" optionValuePath="content.value" prompt="-> 请选择用户角色 <-"
+    label.col-sm-2.control-label for="roles" 角色
+    .col-sm-10
+      view Ember.Select content=availableRoles value=roles optionLabelPath="content.label" optionValuePath="content.value" prompt="-> 请选择用户角色 <-"
 
   partial 'shared/model-management-buttons'

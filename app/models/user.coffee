@@ -1,7 +1,7 @@
 `import Ember from 'ember'`
 `import DS from 'ember-data'`
 
-User = DS.Model.extend
+User = DS.Model.extend Ember.Validations.Mixin,
   username: DS.attr()
   realname: DS.attr()
   email: DS.attr()
@@ -57,5 +57,16 @@ User = DS.Model.extend
           return false
 
     match
+
+User.reopen
+  validations:
+    username:
+      presence: true
+    email:
+      presence: true
+    password:
+      presence: true
+    roles:
+      presence: true
 
 `export default User`
