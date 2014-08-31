@@ -8,8 +8,8 @@ PageableMixin = Ember.Mixin.create
   windowSize: 9
 
   startPage: (->
-    currentPage = Ember.get('currentPage')
-    totalPages = Ember.get('totalPages')
+    currentPage = @get('currentPage')
+    totalPages = @get('totalPages')
 
     return 1 if totalPages <= @windowSize
 
@@ -20,7 +20,7 @@ PageableMixin = Ember.Mixin.create
   ).property('currentPage')
 
   totalPages: (->
-    Math.ceil(Ember.get('total') / Ember.get('pageSize')) || 0
+    Math.ceil(@get('total') / @get('pageSize')) || 0
   ).property('total', 'pageSize')
 
   actions:
