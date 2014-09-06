@@ -25,11 +25,13 @@
       window.Ember = { ENV: { STUB_OBJECT_CREATE: true } };
     </script>
     <![endif]-->
+    <script>
+      window.ENV = window.GloitAppENV = {{ENV}};
+      window.EmberENV = window.GloitAppENV.EmberENV;
+    </script>
     <script src="assets/vendor.js"></script>
     <script src="assets/gloit-app.js"></script>
     <script>
-      window.ENV = window.GloitAppENV = require('gloit-app/config/environment')['default'];
-      window.EmberENV = window.GloitAppENV.EmberENV;
       window.GloitApp = require('gloit-app/app')['default'].create(GloitAppENV.APP);
     </script>
   </body>

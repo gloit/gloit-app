@@ -1,8 +1,6 @@
-/* global require */
-
-var Application = require('gloit-app/app')['default'];
-var Router = require('gloit-app/router')['default'];
 import Ember from 'ember';
+import Application from 'gloit-app/app';
+import Router from 'gloit-app/router';
 
 export default function startApp(attrs) {
   var App;
