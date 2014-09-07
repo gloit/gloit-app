@@ -14,6 +14,14 @@ $ npm install -g ember-cli
 $ npm install -g bower
 ```
 
+### Demo
+
+Gloit App开发版本部署在divshot.io，你可以访问[http://development.gloit-app.divshot.io/](http://development.gloit-app.divshot.io/)来了解Gloit App是什么。
+
+```
+用户名：admin；密码：12345678。
+```
+
 ### 使用说明
 
 #### 自定义应用基调色
