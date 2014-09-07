@@ -37,6 +37,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    // Using the default support compiler of ember-i18n.
+    ENV.I18N_COMPILE_WITHOUT_HANDLEBARS = true;
   }
 
   if (environment === 'test') {
