@@ -19,6 +19,7 @@
     "gloit-component": "gloit/gloit-component#master",
     "ember-forms": "*",
     "ember-validations": "http://builds.dockyard.com.s3.amazonaws.com/ember-validations/release/ember-validations.js",
-    "ember-addons.bs_for_ember": "~0.7.0"
+    "ember-addons.bs_for_ember": "~0.7.0",
+    "ember-simple-auth": "0.6.6"
   }
 }
