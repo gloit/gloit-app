@@ -38,6 +38,9 @@
     "ember-cli-simple-auth": "git://github.com/simplabs/ember-cli-simple-auth.git",
     "ember-cli-simple-auth-devise": "git://github.com/simplabs/ember-cli-simple-auth-devise.git",
     "express": "^4.8.5",
-    "glob": "^4.0.5"
+    "glob": "^4.0.5",
+    "grunt": "^0.4.5",
+    "grunt-gh-pages": "^0.9.1",
+    "install": "^0.1.7"
   }
 }
