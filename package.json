@@ -28,6 +28,7 @@
     "broccoli-static-compiler": "^0.1.4",
     "ember-cli": "0.0.44",
     "ember-cli-coffeescript": "0.0.4",
+    "ember-cli-components": "git://github.com/towerhe/ember-cli-components.git",
     "ember-cli-divshot": "^0.1.4",
     "ember-cli-ember-data": "0.1.0",
     "ember-cli-ic-ajax": "0.1.1",
