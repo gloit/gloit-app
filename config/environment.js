@@ -47,6 +47,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.baseURL = '/gloit-app';
+
     ENV.APP.api = {
       host: 'http://ffers-webapi.gloit.cn',
       namespace: 'v1',
