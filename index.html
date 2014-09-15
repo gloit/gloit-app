@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GloitApp</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="assets/html5shiv.js"></script>
+      <script src="assets/respond.min.js"></script>
+    <![endif]-->
+
+    <base href="/">
+
+    <link rel="stylesheet" href="assets/vendor-215acbd9940602d068405d9a5a4c2359.css">
+    <link rel="stylesheet" href="assets/gloit-app-796184a22a501d4298e20146eb38abaa.css">
+  </head>
+  <body>
+    <!--[if (IE 8)]>
+    <script>
+      window.Ember = { ENV: { STUB_OBJECT_CREATE: true } };
+    </script>
+    <![endif]-->
+    <script>
+      window.ENV = window.GloitAppENV = {"environment":"production","baseURL":"/","locationType":"auto","EmberENV":{"FEATURES":{}},"APP":{"api":{"host":"http://ffers-webapi.gloit.cn","namespace":"v1","baseUrl":"http://ffers-webapi.gloit.cn/v1"}},"simple-auth":{"authorizer":"authorizer:gloit-app","routeAfterAuthentication":"authenticated","crossOriginWhitelist":["http://ffers-webapi.gloit.cn"]}};
+      window.EmberENV = window.GloitAppENV.EmberENV;
+    </script>
+    <script src="assets/vendor-aedae5f93409b866dfb09e068a96dc9a.js"></script>
+    <script src="assets/gloit-app-35566e8070b472648bc3c5e37bc0eaba.js"></script>
+    <script>
+      window.GloitApp = require('gloit-app/app')['default'].create(GloitAppENV.APP);
+    </script>
+  </body>
+</html>
