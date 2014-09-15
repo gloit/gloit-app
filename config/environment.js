@@ -17,9 +17,9 @@ module.exports = function(environment) {
       // when it is created
 
       api: {
-        host: 'http://ffers-webapi.gloit.cn',
-        namespace: 'v1',
-        baseUrl: 'http://ffers-webapi.gloit.cn/v1'
+        host: 'http://localhost:4200',
+        namespace: 'api',
+        baseUrl: 'http://localhost:4200/api'
       }
     }
   };
@@ -27,7 +27,7 @@ module.exports = function(environment) {
   ENV['simple-auth'] = {
     authorizer: 'authorizer:gloit-app',
     routeAfterAuthentication: 'authenticated',
-    crossOriginWhitelist: ["http://ffers-webapi.gloit.cn"]
+    crossOriginWhitelist: ["http://localhost:4200"]
   };
 
   if (environment === 'development') {
@@ -47,7 +47,13 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.APP.api = {
+      host: 'http://ffers-webapi.gloit.cn',
+      namespace: 'v1',
+      baseUrl: 'http://ffers-webapi.gloit.cn/v1'
+    };
 
+    ENV['simple-auth']['crossOriginWhitelist'] = ["http://ffers-webapi.gloit.cn"];
   }
 
   return ENV;
