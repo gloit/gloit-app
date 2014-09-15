@@ -7,7 +7,10 @@ var pickFiles = require('broccoli-static-compiler');
 var app = new EmberApp({
   vendorFiles: {
     'es5-shim.js': 'bower_components/es5-shim/es5-shim.js',
-    'es5-sham.js': 'bower_components/es5-shim/es5-sham.js'
+    'es5-sham.js': 'bower_components/es5-shim/es5-sham.js',
+    'handlebars.js': {
+      production:  'bower_components/handlebars/handlebars.js'
+    }
   }
 });
 
