@@ -7,6 +7,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <base href="/">
+<meta name="gloit-app/config/environment" content="%7B%22modulePrefix%22%3A%22gloit-app%22%2C%22environment%22%3A%22development%22%2C%22baseURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%7D%2C%22contentSecurityPolicy%22%3A%7B%22default-src%22%3A%22%27none%27%22%2C%22script-src%22%3A%22%27self%27%20%27unsafe-eval%27%22%2C%22font-src%22%3A%22%27self%27%22%2C%22connect-src%22%3A%22%27self%27%20http%3A//localhost%3A3000%22%2C%22img-src%22%3A%22%27self%27%20http%3A//localhost%3A4200%22%2C%22style-src%22%3A%22%27self%27%20%27unsafe-inline%27%22%2C%22media-src%22%3A%22%27self%27%22%7D%2C%22APP%22%3A%7B%22api%22%3A%7B%22host%22%3A%22http%3A//localhost%3A4200%22%2C%22namespace%22%3A%22api%22%2C%22baseUrl%22%3A%22http%3A//localhost%3A4200/api%22%7D%2C%22LOG_ACTIVE_GENERATION%22%3Atrue%2C%22LOG_VIEW_LOOKUPS%22%3Atrue%7D%2C%22simple-auth%22%3A%7B%22authorizer%22%3A%22authorizer%3Agloit-app%22%2C%22routeAfterAuthentication%22%3A%22authenticated%22%2C%22crossOriginWhitelist%22%3A%5B%22http%3A//localhost%3A4200%22%5D%7D%2C%22I18N_COMPILE_WITHOUT_HANDLEBARS%22%3Atrue%2C%22contentSecurityPolicyHeader%22%3A%22Content-Security-Policy-Report-Only%22%7D">
+<script src="//localhost:35729/livereload.js?snipver=1" type="text/javascript"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -14,10 +18,8 @@
       <script src="assets/respond.min.js"></script>
     <![endif]-->
 
-    <base href="/gloit-app/">
-
-    <link rel="stylesheet" href="assets/vendor-215acbd9940602d068405d9a5a4c2359.css">
-    <link rel="stylesheet" href="assets/gloit-app-796184a22a501d4298e20146eb38abaa.css">
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/gloit-app.css">
   </head>
   <body>
     <!--[if (IE 8)]>
@@ -25,14 +27,8 @@
       window.Ember = { ENV: { STUB_OBJECT_CREATE: true } };
     </script>
     <![endif]-->
-    <script>
-      window.ENV = window.GloitAppENV = {"environment":"production","baseURL":"/gloit-app","locationType":"auto","EmberENV":{"FEATURES":{}},"APP":{"api":{"host":"http://ffers-webapi.gloit.cn","namespace":"v1","baseUrl":"http://ffers-webapi.gloit.cn/v1"}},"simple-auth":{"authorizer":"authorizer:gloit-app","routeAfterAuthentication":"authenticated","crossOriginWhitelist":["http://ffers-webapi.gloit.cn"]}};
-      window.EmberENV = window.GloitAppENV.EmberENV;
-    </script>
-    <script src="assets/vendor-aedae5f93409b866dfb09e068a96dc9a.js"></script>
-    <script src="assets/gloit-app-1e3c5a09cf145f5d5584619cc51231ea.js"></script>
-    <script>
-      window.GloitApp = require('gloit-app/app')['default'].create(GloitAppENV.APP);
-    </script>
+
+    <script src="assets/vendor.js"></script>
+    <script src="assets/gloit-app.js"></script>
   </body>
 </html>
