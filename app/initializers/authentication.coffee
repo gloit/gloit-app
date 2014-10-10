@@ -2,9 +2,9 @@
 `import DeviseAuthenticator from 'simple-auth-devise/authenticators/devise'`
 `import DeviseAuthorizer from 'simple-auth-devise/authorizers/devise'`
 `import Session from 'simple-auth/session'`
+`import config from '../config/environment'`
 
 GloitAppAuthenticator = DeviseAuthenticator.extend
-  serverTokenEndpoint: "#{GloitAppENV.APP.api.host}/users/sign_in"
   authenticate: (credentials) ->
     new Ember.RSVP.Promise (resolve, reject) =>
       data = {}

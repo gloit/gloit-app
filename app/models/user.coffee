@@ -1,5 +1,6 @@
 `import Ember from 'ember'`
 `import DS from 'ember-data'`
+`import config from '../config/environment'`
 
 User = DS.Model.extend Ember.Validations.Mixin,
   username: DS.attr()
@@ -18,7 +19,7 @@ User = DS.Model.extend Ember.Validations.Mixin,
       return reject('您两次输入的新密码不匹配') if newPwd != pwdConfirmation
 
       Ember.$.ajax(
-        url: "#{GloitAppENV.APP.api.baseUrl}/password"
+        url: "#{config.APP.api.baseUrl}/password"
         type: "PUT"
         data:
           password:
@@ -32,11 +33,11 @@ User = DS.Model.extend Ember.Validations.Mixin,
         reject(jqXHR.responseJSON.errors.password)
 
   lock: ->
-    Ember.$.post("#{GloitAppENV.APP.api.baseUrl}/users/#{@get('id')}/lock").then (user) =>
+    Ember.$.post("#{config.APP.api.baseUrl}/users/#{@get('id')}/lock").then (user) =>
       @get('store').pushPayload('user', user)
 
   unlock: ->
-    Ember.$.post("#{GloitAppENV.APP.api.baseUrl}/users/#{@get('id')}/unlock").then (user) =>
+    Ember.$.post("#{config.APP.api.baseUrl}/users/#{@get('id')}/unlock").then (user) =>
       @get('store').pushPayload('user', user)
 
   hasRole: (roles, matchMode) ->

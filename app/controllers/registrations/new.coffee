@@ -1,4 +1,5 @@
 `import Ember from 'ember'`
+`import config from '../../config/environment'`
 
 NewController = Ember.ObjectController.extend
   username: null
@@ -10,7 +11,7 @@ NewController = Ember.ObjectController.extend
   actions:
     save: ->
       Ember.$.ajax(
-        url: "#{GloitAppENV.APP.api.baseUrl}/users"
+        url: "#{config.APP.api.baseUrl}/users"
         type: 'POST'
         data:
           user:

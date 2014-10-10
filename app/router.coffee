@@ -1,7 +1,8 @@
 `import Ember from 'ember'`
+`import config from './config/environment'`
 
 Router = Ember.Router.extend
-  location: GloitAppENV.locationType
+  location: config.locationType
 
   storeURL: (->
     currentURL = @get('url')

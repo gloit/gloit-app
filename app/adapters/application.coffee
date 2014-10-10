@@ -1,7 +1,8 @@
 `import DS from 'ember-data'`
+`import config from '../config/environment'`
 
 ApplicationAdapter = DS.ActiveModelAdapter.extend
-  host: GloitAppENV.APP.api.host
-  namespace: GloitAppENV.APP.api.namespace
+  host: config.APP.api.host
+  namespace: config.APP.api.namespace
 
 `export default ApplicationAdapter`

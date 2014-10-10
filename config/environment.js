@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
+    modulePrefix: 'gloit-app',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -11,6 +12,15 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-eval'",
+      'font-src': "'self'",
+      'connect-src': "'self' http://localhost:3000", // Allow data (ajax/websocket) from http://localhost:3000
+      'img-src': "'self' http://localhost:4200",
+      'style-src': "'self' 'unsafe-inline'",
+      'media-src': "'self'"
+  },
 
     APP: {
       // Here you can pass flags/options to your application instance
@@ -43,7 +53,15 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
-    ENV.baseURL = '/'; // Testem prefers this...
+    // Testem prefers this...
+    ENV.baseURL = '/';
+    ENV.locationType = 'auto';
+
+    // keep test console output quieter
+    ENV.APP.LOG_ACTIVE_GENERATION = false;
+    ENV.APP.LOG_VIEW_LOOKUPS = false;
+
+    ENV.APP.rootElement = '#ember-testing';
   }
 
   if (environment === 'production') {
@@ -56,6 +74,7 @@ module.exports = function(environment) {
     };
 
     ENV['simple-auth']['crossOriginWhitelist'] = ["http://ffers-webapi.gloit.cn"];
+    ENV['simple-auth-devise']['serverTokenEndpoint'] = "http://ffers-webapi.gloit.cn/users/sign_in";
   }
 
   return ENV;
