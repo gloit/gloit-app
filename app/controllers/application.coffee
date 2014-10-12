@@ -1,26 +1,10 @@
 `import Ember from 'ember'`
+`import gloitAppConfig from '../config'`
 
 ApplicationController = Ember.Controller.extend
-  brand: { name: 'Gloit' }
-
-  sidebar:
-    menus: [{
-      icon: 'fa fa-gear', text: '系统管理', roles: ['admins']
-      items: [
-        { icon: 'fa fa-users', route: 'users', text: '用户管理', roles: ['admins'] }
-      ]
-    }]
-
-    starterItems: [
-      { icon: 'fa fa-user', route: 'account.profile', text: '个人信息' }
-      { icon: 'fa fa-key', route: 'account.password', text: '修改密码' }
-      { icon: 'fa fa-sign-out', route: 'logout', text: '注销' }
-    ]
-
-  availableRoles: [
-    { label: '系统管理员', value: 'admins' }
-    { label: '普通用户', value: 'users' }
-  ]
+  brand: gloitAppConfig.brand
+  sidebar: gloitAppConfig.sidebar
+  availableRoles: gloitAppConfig.availableRoles
 
   availableSidebar: (->
     menus = []
