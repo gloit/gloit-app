@@ -1,4 +1,4 @@
-gloitAppConfig =
+appConfig =
   brand: { name: 'GLOIT' }
   title: 'Gloit Application'
   copyright: '&copy; 2014'
@@ -30,4 +30,4 @@ gloitAppConfig =
     { label: '普通用户', value: 'users' }
   ]
 
-`export default gloitAppConfig`
+`export default appConfig`

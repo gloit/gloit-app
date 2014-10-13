@@ -1,10 +1,10 @@
 `import Ember from 'ember'`
-`import gloitAppConfig from '../config'`
+`import appConfig from '../config'`
 
 ApplicationController = Ember.Controller.extend
-  brand: gloitAppConfig.brand
-  sidebar: gloitAppConfig.sidebar
-  availableRoles: gloitAppConfig.availableRoles
+  brand: appConfig.brand
+  sidebar: appConfig.sidebar
+  availableRoles: appConfig.availableRoles
 
   availableSidebar: (->
     menus = []

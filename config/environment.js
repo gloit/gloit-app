@@ -39,6 +39,9 @@ module.exports = function(environment) {
     routeAfterAuthentication: 'authenticated',
     crossOriginWhitelist: ["http://localhost:4200"]
   };
+  ENV['simple-auth-devise'] = {
+    serverTokenEndpoint: 'http://localhost:4200/users/sign_in'
+  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
