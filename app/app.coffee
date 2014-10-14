@@ -39,6 +39,9 @@ App = Ember.Application.extend
   podModulePrefix: config.podModulePrefix
   Resolver: Resolver
 
+  ready: ->
+    @devTools.globalize()
+
 loadInitializers(App, config.modulePrefix)
 
 `export default App`
