@@ -5,6 +5,9 @@ BaseMixin = Ember.Mixin.create
 
   setupController: (controller, model) ->
     @_super(controller, model)
+
+    controller.set('typeKey', @typeKey)
+    controller.set('typeHumanName', @typeHumanName)
     controller.set('formLegend', @get('formLegend')) if @get('formLegend')
 
   actions:
