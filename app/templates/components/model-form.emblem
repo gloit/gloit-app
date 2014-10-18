@@ -1,0 +1,26 @@
+em-form model=model form_layout="horizontal" submit_button=false
+  h2
+    = formLegend
+
+  yield
+
+  .form-group.buttons
+    .col-sm-2
+    .col-sm-10
+      button.btn.btn-primary{action 'save'}
+        i.fa.fa-save
+        | 保存
+      if model.isNew
+        button.btn.btn-link{action 'cancel'}
+          | 取消
+      else
+        button.btn.btn-danger{action 'remove'}
+          i.fa.fa-times 删除
+        button.btn.btn-link{action 'revertChanges'}
+          | 重置
+      button.btn.btn-default{action 'return'}
+        i.fa.fa-mail-reply
+        | 返回
+
+bs-modal name=removeConfirmationName fade=true footerButtons=removeConfirmationButtons title=removeConfirmationTitle
+  p= removeConfirmationMessage
