@@ -19,9 +19,10 @@ em-form model=model form_layout="horizontal" submit_button=false
         button.btn.btn-link{action 'revertChanges'}
           | 重置
 
-      link-to indexRoute class="btn btn-default"
-        i.fa.fa-mail-reply
-        | 返回
+      button.btn.btn-default
+        link-to indexRoute
+          i.fa.fa-mail-reply
+          | 返回
 
 bs-modal name=removeConfirmationName fade=true footerButtons=removeConfirmationButtons title=removeConfirmationTitle
   p= removeConfirmationMessage
