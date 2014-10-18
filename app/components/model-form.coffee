@@ -5,6 +5,10 @@ ModelFormComponent = Ember.Component.extend
   typeHumanName: undefined
   model: undefined
 
+  indexRoute: (->
+    @get('typeKey').pluralize()
+  ).property('typeKey')
+
   removeConfirmationName: (->
     "remove#{@typeKey.capitalize()}Confirmation"
   ).property('typeKey')
@@ -22,7 +26,6 @@ ModelFormComponent = Ember.Component.extend
   remove: 'remove'
   confirmRemove: 'confirmRemove'
   revertChanges: 'revertChanges'
-  return: 'return'
 
   actions:
     save: -> @sendAction('save')
@@ -30,6 +33,5 @@ ModelFormComponent = Ember.Component.extend
     remove: -> @sendAction('remove')
     confirmRemove: -> @sendAction('confirmRemove')
     revertChanges: -> @sendAction('revertChanges')
-    return: -> @sendAction('return')
 
 `export default ModelFormComponent`

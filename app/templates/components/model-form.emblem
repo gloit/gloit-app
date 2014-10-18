@@ -18,7 +18,8 @@ em-form model=model form_layout="horizontal" submit_button=false
           i.fa.fa-times 删除
         button.btn.btn-link{action 'revertChanges'}
           | 重置
-      button.btn.btn-default{action 'return'}
+
+      link-to indexRoute class="btn btn-default"
         i.fa.fa-mail-reply
         | 返回
 
