@@ -6,11 +6,6 @@ UserController = Ember.ObjectController.extend ModelManagerMixin,
 
   availableRoles: Ember.computed.alias('controllers.authenticated.availableRoles')
 
-  typeKey: 'user'
-  typeHumanName: '用户'
-
-  removeConfirmationName: 'removeUserConfirmation'
-
   lockable: (->
     !@get('model.isNew') && @get('model.lockable') && @get('model.id') != @get('session.currentUser.id')
   ).property('model.{id,lockable,isNew}', 'session.currentUser.id')
