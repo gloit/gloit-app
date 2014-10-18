@@ -1,15 +1,8 @@
 `import Ember from 'ember'`
+`import ModelEditMixin from '../mixins/route/model/edit'`
 
-UserRoute = Ember.Route.extend
-  model: (params) -> @store.find('user', params.user_id)
-
-  setupController: (controller, model) ->
-    controller.set('formLegend', '编辑用户')
-
-    @_super(controller, model)
-
-  actions:
-    willTransition: ->
-      @get('controller').send('revertChanges')
+UserRoute = Ember.Route.extend ModelEditMixin,
+  typeKey: 'user'
+  typeHumanName: '用户'
 
 `export default UserRoute`

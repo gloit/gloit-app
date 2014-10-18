@@ -1,17 +1,10 @@
 `import Ember from 'ember'`
+`import ModelNewMixin from '../../mixins/route/model/new'`
 
-NewRoute = Ember.Route.extend
+NewRoute = Ember.Route.extend ModelNewMixin,
+  typeKey: 'user'
+  typeHumanName: '用户'
+
   controllerName: 'user'
-
-  model: -> @store.createRecord('user')
-
-  setupController: (controller, model) ->
-    controller.set('formLegend', '添加用户')
-
-    @_super(controller, model)
-
-  actions:
-    willTransition: ->
-      @get('controller').send('revertChanges')
 
 `export default NewRoute`
