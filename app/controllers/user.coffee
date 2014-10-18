@@ -4,11 +4,10 @@
 UserController = Ember.ObjectController.extend ModelManagerMixin,
   needs: ['authenticated']
 
-  formLegend: '用户管理'
   availableRoles: Ember.computed.alias('controllers.authenticated.availableRoles')
 
-  modelName: 'user'
-  humanModelName: '用户'
+  typeKey: 'user'
+  typeHumanName: '用户'
 
   removeConfirmationName: 'removeUserConfirmation'
 
