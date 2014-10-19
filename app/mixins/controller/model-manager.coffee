@@ -15,9 +15,10 @@ ModelManagerMixin = Ember.Mixin.create
   afterCancelRoute: (-> @get('typeKey').dasherize().pluralize()).property('typeKey')
   afterDestroyRoute: (-> @get('typeKey').dasherize().pluralize()).property('typeKey')
 
-  # TODO
-  # Remove
-  removeConfirmationName: ''
+  removeConfirmationName: (->
+    "remove#{@get('typeKey').capitalize()}Name"
+  ).property('typeKey')
+
   # TODO
   # Remove
   removeConfirmationTitle: '确认删除'
