@@ -1,5 +1,5 @@
 gc-sidebar brand=brand menus=sidebar.menus starterItems=sidebar.starterItems
 gc-main-toolbar items=breadcrumbs
 
-.gloit-content
+.ga-content
   outlet

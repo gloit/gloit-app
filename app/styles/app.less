@@ -10,14 +10,19 @@
 
 @base-color: @blue;
 
-.gloit-app, .gloit-authenticated {
+.ga, .ga-authenticated {
   height: 100%;
   overflow: hidden;
 }
 
-.gloit-content {
+.ga-content {
   height: 100%;
   overflow: auto;
+}
+
+// Overrides gloit component
+input {
+  color: @black !important;
 }
 
 .gc-sidebar {
@@ -26,9 +31,4 @@
       top: -25px;
     }
   }
-}
-
-// Overrides gloit component
-input {
-  color: @black !important;
 }

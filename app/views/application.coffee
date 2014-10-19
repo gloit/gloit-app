@@ -1,6 +1,6 @@
 `import Ember from 'ember'`
 
 ApplicationView = Ember.View.extend
-  classNames: 'gloit-app'
+  classNames: 'ga'
 
 `export default ApplicationView`
