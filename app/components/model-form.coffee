@@ -1,6 +1,8 @@
 `import Ember from 'ember'`
 
 ModelFormComponent = Ember.Component.extend
+  classNames: ['ga-model-form']
+
   typeKey: undefined
   typeHumanName: undefined
   model: undefined
