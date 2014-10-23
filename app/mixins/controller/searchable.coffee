@@ -8,6 +8,12 @@ SearchableMixin = Ember.Mixin.create PageableMixin,
 
   query: {}
 
+  typeKey: undefined
+
+  # TODO
+  # Remove
+  keyForModel: Ember.computed.alias('typeKey')
+
   paginate: (->
     @setDefaultQuery()
     @_search()
@@ -30,8 +36,10 @@ SearchableMixin = Ember.Mixin.create PageableMixin,
       @set("query.#{name}", value)
 
   _search: ->
-    if @get('keyForModel')
-      @get('store').find(@get('keyForModel'), q: @get('query'), page: @get('currentPage'), limit: @get('pageSize')).then (records) =>
+    if @get('typeKey')
+      @send('loading')
+      @get('store').find(@get('typeKey'), q: @get('query'), page: @get('currentPage'), limit: @get('pageSize')).then (records) =>
+        @send('finished')
         @set('total', records.meta.total)
         @set(@get('searchResultProperty'), records)
     else
