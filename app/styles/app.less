@@ -3,6 +3,8 @@
 @import "bower_components/font-awesome/less/font-awesome.less";
 @import "bower_components/gloit-component/less/gloit-component.less";
 
+@import "./overrides/gloit-component.less";
+
 @import "./gloit-app/registration.less";
 @import "./gloit-app/sidelist.less";
 @import "./gloit-app/table.less";
@@ -20,13 +22,4 @@
 .ga-content {
   height: 100%;
   overflow: auto;
-}
-
-// Overrides gloit component
-.gc-sidebar {
-  .gc-starter {
-    ul.dropdown-menu {
-      top: -25px;
-    }
-  }
 }
