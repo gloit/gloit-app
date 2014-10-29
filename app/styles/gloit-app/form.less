@@ -1,13 +1,24 @@
-.ga-left-search-form {
+.ga-content-sidebar {
   padding: 15px 10px;
   height: 100%;
   width: 300px;
   background: lighten(@sliver, 10%);
   border-right: 1px solid @sliver;
   overflow-y: auto;
-  float: left;
   position: relative;
+}
 
+.ga-content-left-sidebar {
+  .ga-content-sidebar;
+  float: left;
+}
+
+.ga-content-right-sidebar {
+  .ga-content-sidebar;
+  float: right;
+}
+
+.ga-search-form {
   .form-group {
     margin-bottom: 5px;
     .row {
@@ -23,6 +34,22 @@
   }
 }
 
+.ga-content-left-search-form {
+  .ga-content-left-sidebar;
+  .ga-search-form;
+}
+
+.ga-content-right-search-form {
+  .ga-content-right-sidebar;
+  .ga-search-form;
+}
+
+// Deprecated
+.ga-left-search-form {
+  .ga-content-left-sidebar;
+  .ga-search-form;
+}
+
 .ga-model-form {
   height: 100%;
   form {
@@ -32,10 +59,6 @@
       margin-bottom: 30px;
     }
   }
-}
-
-select {
-  color: @black !important;
 }
 
 .has-success {
