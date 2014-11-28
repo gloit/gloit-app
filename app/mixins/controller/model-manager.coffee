@@ -84,8 +84,8 @@ ModelManagerMixin = Ember.Mixin.create
       removeFailed = (response) =>
         @get('model').rollback()
 
-        if response.responseJSON.msg
-          Notifier.error response.responseJSON.msg
+        if response.errors
+          Notifier.error response.errors.msg
         else
           Notifier.error("删除#{@get('typeHumanName')}失败")
 
