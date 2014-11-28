@@ -14,8 +14,9 @@ em-form model=model form_layout="horizontal" submit_button=false
         button.btn.btn-link{action 'cancel'}
           | 取消
       else
-        button.btn.btn-danger{action 'remove'}
-          i.fa.fa-times 删除
+        unless unremovable
+          button.btn.btn-danger{action 'remove'}
+            i.fa.fa-times 删除
         button.btn.btn-link{action 'revertChanges'}
           | 重置
 
