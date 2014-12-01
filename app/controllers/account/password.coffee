@@ -1,6 +1,7 @@
 `import Ember from 'ember'`
+`import EmberValidations from 'ember-validations'`
 
-PasswordController = Ember.ObjectController.extend Ember.Validations.Mixin,
+PasswordController = Ember.ObjectController.extend EmberValidations.Mixin,
   actions:
     save: ->
       @send('loading')

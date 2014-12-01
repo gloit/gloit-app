@@ -1,8 +1,9 @@
 `import Ember from 'ember'`
 `import DS from 'ember-data'`
 `import config from '../config/environment'`
+`import EmberValidations from 'ember-validations'`
 
-User = DS.Model.extend Ember.Validations.Mixin,
+User = DS.Model.extend EmberValidations.Mixin,
   username: DS.attr()
   realname: DS.attr()
   email: DS.attr()
