@@ -30,19 +30,13 @@ var app = new EmberApp({
 app.import('bower_components/html5shiv/dist/html5shiv.js', { destDir: 'assets' });
 app.import('bower_components/respond/dest/respond.min.js', { destDir: 'assets' });
 
-app.import('bower_components/select2/select2.css');
-app.import('bower_components/select2/select2-bootstrap.css');
-
 app.import('bower_components/jquery.browser/dist/jquery.browser.js');
 app.import('bower_components/cldr/plurals.js');
 app.import('bower_components/ember-i18n/lib/i18n.js');
 app.import('bower_components/bootstrap/dist/js/bootstrap.js');
-app.import('bower_components/ember-list-view/index.js');
 app.import('bower_components/ember-addons.bs_for_ember/dist/js/bs-core.max.js');
 app.import('bower_components/ember-addons.bs_for_ember/dist/js/bs-button.max.js');
 app.import('bower_components/ember-addons.bs_for_ember/dist/js/bs-modal.max.js');
-app.import('bower_components/select2/select2.js');
-app.import('bower_components/select2/select2_locale_zh-CN.js');
 app.import('bower_components/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js');
 app.import('bower_components/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js');
 app.import('bower_components/notifier/notifier.js');
@@ -65,16 +59,10 @@ var bootstrapAssets = pickFiles('bower_components/bootstrap', {
   destDir: '/fonts'
 });
 
-var select2Assets = pickFiles('bower_components/select2', {
-  srcDir: '/',
-  files: ['select2.png', 'select2x2.png'],
-  destDir: '/assets'
-});
-
 var gloitComponentAssets = pickFiles('bower_components/gloit-component', {
   srcDir: 'images/',
   files: ['**/*'],
   destDir: '/images'
 });
 
-module.exports = mergeTrees([app.toTree(), fontAwesomeAssets, bootstrapAssets, select2Assets, gloitComponentAssets]);
+module.exports = mergeTrees([app.toTree(), fontAwesomeAssets, bootstrapAssets, gloitComponentAssets]);
