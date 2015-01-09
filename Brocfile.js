@@ -43,7 +43,6 @@ app.import('bower_components/notifier/notifier.js');
 app.import('bower_components/momentjs/moment.js');
 app.import('bower_components/momentjs/lang/zh-cn.js');
 app.import('bower_components/ember-forms/dist/globals/main.js');
-app.import('bower_components/ember-validations/index.js');
 
 app.import('bower_components/gloit-component/dist/globals/gloit-component.js');
 
